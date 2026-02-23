@@ -1,1 +1,1 @@
-# DarioQuentalExerciciosGRSC0925
+#Exercícios Gonçalo Pinto GRSC 0925
