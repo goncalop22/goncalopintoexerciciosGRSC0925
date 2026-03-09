@@ -1,4 +1,4 @@
-﻿
+
 #Exercicio 1 
 
 Write-Host "--- A calcular os primeiros 30 números Pares e Ímpares ---" -ForegroundColor Green
@@ -57,7 +57,7 @@ for ($i = 1; $i -le 10; $i++) {
     
   
     # usar o double para ter 19.2, 10,4, etc...
-    $nota = [double]$nota
+    $nota = $nota
     
     # somar uma nota guardada na variavel e a nota nova adicionada
     $soma = $soma + $nota
@@ -69,3 +69,93 @@ $media = $soma / 10
 Write-Host "------------------------"
 Write-Host "A soma de todas as notas é: $soma" -ForegroundColor Yellow
 Write-Host "A média final dos 10 alunos é: $media" -ForegroundColor Green 
+
+# Exercício 4
+
+# Read-Host pede o valor ao utilizador
+$entrada = Read-Host "Introduza um numero inteiro"
+$numero = $entrada # Temos de garantir que é tratado como número e não texto
+$divisores = 0
+
+for ($i = 1; $i -le $numero; $i++) {
+    
+    if ($numero % $i -eq 0) {
+        $divisores++
+    }
+}
+
+if ($divisores -eq 2) {
+    Write-Host "E primo!" -ForegroundColor Green
+} else {
+    Write-Host "Nao e primo." -ForegroundColor Red
+}
+
+# Exercício 5
+for ($i = 1; $i -le 10000; $i++) {
+    Write-Host $i
+}
+
+#Exercício 6
+$contadorPrimos = 0 
+$numeroAtual = 2    
+
+Write-Host "Os 10 primeiros numeros primos sao:"
+
+while ($contadorPrimos -lt 10) {
+    $divisores = 0
+    
+    for ($i = 1; $i -le $numeroAtual; $i++) {
+        if ($numeroAtual % $i -eq 0) {
+            $divisores++
+        }
+    }
+
+    if ($divisores -eq 2) {
+        Write-Host "$numeroAtual " -NoNewline 
+        $contadorPrimos++ 
+    }
+    
+    $numeroAtual++ 
+}
+
+#Exercicio 7
+for ($i = 10; $i -le 1000; $i += 10) {
+    Write-Host "$i "
+}
+
+#Exercício 8
+Write-Host "Primeira serie:"
+for ($i = 10; $i -le 1000; $i += 10) {
+    Write-Host "$i " 
+}
+Write-Host "Segunda serie:"
+for ($i = 15; $i -le 995; $i += 10) {
+    Write-Host "$i " 
+}
+Write-Host ""
+
+#Exercicio 9
+do {
+    $entrada = Read-Host "Introduza um numero entre 1 e 100"
+    $numero = $entrada
+
+    if ($numero -lt 1 -or $numero -gt 100) {
+        Write-Host "Valor invalido! Tente novamente.`n" -ForegroundColor Red
+    }
+} while ($numero -lt 1 -or $numero -gt 100)
+
+Write-Host "Perfeito! Introduziu o numero $numero." -ForegroundColor Green
+
+#Exercicio 10
+$entrada = Read-Host "Introduza um numero inteiro"
+$numero = $entrada
+$divisores = 0
+
+for ($i = 1; $i -le $numero; $i++) {
+    
+    if ($numero % $i -eq 0) {
+        $divisores++ 
+    }
+}
+
+Write-Host "O numero $numero tem $divisores divisores." -ForegroundColor Cyan
